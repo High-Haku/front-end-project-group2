@@ -1,6 +1,8 @@
 import React from 'react';
 import CatLuvLogo from '../img/CatLuvCom.png';
 import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card} from "react-bootstrap";
+import ImgNotFound from "../img/img-not-found.jpeg";
+import './NotFound.css';
 
 function NotFound(){
 return(
@@ -25,6 +27,14 @@ return(
     </Nav>
     </Container>
   </Navbar>
+        </div>
+        <div className='main-content'>
+        <Container>
+        <img src=""/>
+
+
+
+        </Container>
         </div>
 
         <div className="Footer">

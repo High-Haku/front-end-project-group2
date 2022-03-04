@@ -1,6 +1,6 @@
 import React from 'react';
 import CatLuvLogo from '../img/CatLuvCom.png';
-import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card} from "react-bootstrap";
+import { Container, Navbar, Nav, Image} from "react-bootstrap";
 import ImgNotFound from "../img/img-not-found.jpeg";
 import './NotFound.css';
 
@@ -29,12 +29,8 @@ return(
   </Navbar>
         </div>
         <div className='main-content'>
-        <Container>
-        <img src=""/>
+        <Image fluid src={ImgNotFound}/>
 
-
-
-        </Container>
         </div>
 
         <div className="Footer">

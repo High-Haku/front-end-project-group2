@@ -1,0 +1,66 @@
+Navbar {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    align-content: space-between;
+}
+
+.nav-link{
+    font-size: 16px;
+}
+
+.nav-link:hover{
+    color:black;
+    font-weight: bold;
+}
+
+.image-lazy-cat{
+    padding-left: 20px;
+}
+
+.text-cats{
+    text-align: left;
+    padding: 20px;
+}
+
+.text-cats > h2{
+    font-size: 70px;
+    font-weight: bold;
+}
+.text-cats >h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.text-cats > .btn-login {
+    padding: 20px;
+    font-size: 30px;
+} 
+
+.Footer{
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+
+.card-group{
+    text-align: left;
+    padding: 20px;
+}
+
+.card-title{
+    padding-top: 5px;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.icon{
+    text-align: left;
+}
+
+.card-text{
+    padding-top: 5px;
+    font-size: 16px;
+}

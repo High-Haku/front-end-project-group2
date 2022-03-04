@@ -29,7 +29,7 @@ return(
   </Navbar>
         </div>
         <div className='main-content'>
-        <Image fluid src={ImgNotFound}/>
+        <Image fluid src={ImgNotFound} responsive/>
 
         </div>
 

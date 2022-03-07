@@ -7,8 +7,8 @@ import './NotFound.css';
 function NotFound(){
 return(
     <div className="NotFound">
-        <div className="header">
-  <Navbar>
+  <div className="header">
+  <Navbar expand="lg">
       <Container>      
     <Navbar.Brand href="#home">
       <img
@@ -19,12 +19,15 @@ return(
         alt="CatLuv logo"
       />
     </Navbar.Brand>      
-    <Nav className="justify-content-end">
+    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+    <Navbar.Collapse id="basic-navbar-nav justify-content-end">
+    <Nav className="me-auto justify-content-end">
       <Nav.Link className="nav-link" href="#pricing">Pricing</Nav.Link>
       <Nav.Link className="nav-link" href="#courses">Courses</Nav.Link>
       <Nav.Link className="nav-link" href="#service">Service</Nav.Link>
       <Nav.Link className="nav-link" href="#company">Company</Nav.Link>
     </Nav>
+    </Navbar.Collapse>
     </Container>
   </Navbar>
         </div>

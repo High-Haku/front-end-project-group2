@@ -5,7 +5,8 @@ import "./LandingPage.css";
 import Basket from '../img/basket.svg';
 import Window from '../img/window-stack.svg';
 import Book from '../img/book.svg';
-import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card, Form} from "react-bootstrap";
+import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card, Form, } from "react-bootstrap";
+import { AiFillFacebook, AiFillTwitterSquare, AiFillInstagram, AiFillYoutube} from "react-icons/ai";
 
 function LandingPage(){
     return(
@@ -56,22 +57,22 @@ function LandingPage(){
     </Row>
             </Container>
         </div>
-        <div className="card-group d-flex justify-content-between">
+        <div className="card-group">
             <Container>
-<CardGroup className="p-5" width="80%">
+<CardGroup className="p-5">
 <Card className="card border-0 p-20">
-<Card.Img className="icon-left icon-basket float-start" variant="top" width="50" height="50" alt="Basket" color="purple" src={Basket}/>
+<Card.Img className="icon-left icon-basket" width="50" style={{filter: "invert(19%) sepia(96%) saturate(5161%) hue-rotate(276deg) brightness(99%) contrast(96%)"}} variant="left" height="50" alt="Basket" src={Basket}/>
 <Card.Title className="card-title">Shop</Card.Title>
 <Card.Text className="card-text">Shopping any accessories and food for your cats.</Card.Text>
 </Card>
 <Card className="card border-0 p-20">
-<Card.Img className="icon icon-window" variant="top" width="50" height="50" alt="Window" src={Window}/>
+<Card.Img className="icon icon-window" width="50" style={{filter: "invert(9%) sepia(99%) saturate(5630%) hue-rotate(246deg) brightness(111%) contrast(148%)"}} variant="left" height="50" alt="Window" src={Window}/>
 <Card.Title className="card-title">Access from Any Platform</Card.Title>
 <Card.Text className="card-text">Use the benefits of the services anywhere.</Card.Text>
 
 </Card>
 <Card className="card border-0 p-20">
-<Card.Img className="icon icon-book float-left" variant="top" width="50" height="50" alt="Book" src={Book}/>
+<Card.Img className="icon icon-book float-left" width="50" style={{filter: "invert(45%) sepia(64%) saturate(2946%) hue-rotate(339deg) brightness(100%) contrast(102%)"}} variant="left"  height="50" alt="Book" src={Book}/>
 <Card.Title className="card-title ">Guides and Community</Card.Title>
 <Card.Text className="card-text">A private community that we care each others.</Card.Text>
 </Card>
@@ -84,15 +85,21 @@ function LandingPage(){
             <Form className="p-5">
             <Form.Group className="mb-3 "controlId="formBasicEmail">
     <Form.Control type="email" placeholder="Enter email"/>
-    <Button className="justify-content-end" variant="primary" type="submit">
+  </Form.Group>
+  <Button className="justify-content-end" variant="primary" type="submit">
     Submit
   </Button>
-  </Form.Group>
             </Form>
           </Container>
 
         </div>
         <div className="Footer">
+        <Container className="social-media p-10">
+   <img width="5%" alt="facebook" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillFacebook}/>
+   <img width="5%" alt="instagram" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillInstagram}/>
+<img width="5%" alt="twitter" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillTwitterSquare}/>
+<img width="5%" alt="youtube"style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillYoutube}/>
+  </Container>
           <p>Front End Developer Project - Group 2</p>
         </div>
         </div>

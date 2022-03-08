@@ -93,7 +93,6 @@ function LandingPage(){
   </Button>
             </Form>
           </Container>
-
         </div>
         <div className="Footer">
         <Container className="social-media p-3">

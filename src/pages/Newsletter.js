@@ -1,48 +1,19 @@
-import { Component } from "react";
 import React from "react";
-import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card, Form, } from "react-bootstrap";
+import { Container, Button, Form } from "react-bootstrap";
+import useForm from 'react-hook-form';
 
-class Newsletter extends Component {
-constructor(props){
-    super(props);
-    this.state={
-        email:'',
-    },
-};
-this.handleChange = this.handleChange.bind(this);
-}
-
-validateEmail(e) {
-    const emailRex -  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-const {validate} = this.state;
-if (emailRex.test(e.target.value)) {
-    validate.emailState = 'has-success';
-  } else {
-    validate.emailState = 'has-danger';
-  }
-
-  this.setState({ validate });
-}
-
-submitForm(e) {
-    e.preventDefault();
-    console.log(`Email: ${this.state.email}`);
-  }
-
-    render(){
-        const {email} = this.state;
-        return(
-        <div className="newsletter p-5 border-10">
+function Newsletter(){
+ const [useForm, inputEmail] = useForm;
+ const emailSubmit = data => {
+    console.log(data);
+ };
+    return(
+        <div className="newsletter p-5 border-10" >
         <Container>
           <h2 className="text-center">Subscribe Newsletter</h2>
-          <Form className="form p-5" onSubmit={(e) => this.submitForm(e)} >
-          <Form.Group valid={this.state.validate.emailState === "has-success"}
-              invalid={this.state.validate.emailState === "has-danger"}
-              value={email}
-              onChange={(e) => {
-                this.validateEmail(e);
-                this.handleChange(e); className="mb-3 "controlId="formBasicEmail">
-  <Form.Control className="email" type="email" placeholder="Enter email"/>
+          <Form className="p-5" onSubmit={emailSubmit}>
+          <Form.Group className="mb-3 "controlId="formBasicEmail">
+  <Form.Control type="email" placeholder="Enter email" ref={inputEmail}/>
 </Form.Group>
 <Button className="justify-content-end" variant="primary" type="submit">
   Submit
@@ -51,8 +22,9 @@ submitForm(e) {
         </Container>
 
       </div>
-        );
-    }
+
+
+    );
 }
 
 export default Newsletter;

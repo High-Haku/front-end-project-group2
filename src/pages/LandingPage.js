@@ -10,7 +10,6 @@ import Basket from '../img/basket.svg';
 import Window from '../img/window-stack.svg';
 import Book from '../img/book.svg';
 import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card, Form, } from "react-bootstrap";
-import { AiFillFacebook, AiFillTwitterSquare, AiFillInstagram, AiFillYoutube} from "react-icons/ai";
 
 function LandingPage(){
     return(

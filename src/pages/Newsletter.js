@@ -2,6 +2,8 @@ import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import useForm from 'react-hook-form';
 
+//referensi https://stackoverflow.com/questions/41296668/reactjs-form-input-validation
+
 function Newsletter(){
  const [useForm, inputEmail] = useForm;
  const emailSubmit = data => {

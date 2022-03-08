@@ -1,4 +1,4 @@
-Navbar {
+.navbar {
     padding: 10px;
     background-color: white;
     display: flex;
@@ -43,6 +43,9 @@ Navbar {
     background-color: black;
     color: white;
     font-size: 18px;
+}
+.m-r-10{
+    margin-right: 10px !important;
 }
 
 .card-group{

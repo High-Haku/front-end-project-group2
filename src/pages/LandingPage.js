@@ -2,6 +2,10 @@ import React from "react";
 import CatLuvLogo from '../img/CatLuvCom.png';
 import LazyCat from '../img/lazycat.png';
 import "./LandingPage.css";
+import Facebook from "../img/facebook.svg";
+import Twitter from "../img/twitter.svg";
+import Instagram from "../img/instagram.svg";
+import Youtube from "../img/youtube.svg";
 import Basket from '../img/basket.svg';
 import Window from '../img/window-stack.svg';
 import Book from '../img/book.svg';
@@ -12,9 +16,8 @@ function LandingPage(){
     return(
         <div className="LandingPage">
            <div className="header">
-  <Navbar expand="md">
-      <Container>      
-    <Navbar.Brand href="#home">
+  <Navbar className="navbar d-flex justify-content-between" expand="md">
+    <Navbar.Brand className="navbar navbar-brand"href="#home">
       <img
         src={CatLuvLogo}
         width="200"
@@ -24,15 +27,14 @@ function LandingPage(){
       />
     </Navbar.Brand>      
     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-    <Navbar.Collapse id="basic-navbar-nav justify-content-end">
-    <Nav className="me-auto justify-content-end">
+    <Navbar.Collapse className="navbar navbar-collapse" id="basic-navbar-nav">
+    <Nav className="me-auto">
       <Nav.Link className="nav-link" href="#pricing">Pricing</Nav.Link>
       <Nav.Link className="nav-link" href="#courses">Courses</Nav.Link>
       <Nav.Link className="nav-link" href="#service">Service</Nav.Link>
       <Nav.Link className="nav-link" href="#company">Company</Nav.Link>
     </Nav>
     </Navbar.Collapse>
-    </Container>
   </Navbar>
         </div>
         <div className="main-content">
@@ -94,11 +96,11 @@ function LandingPage(){
 
         </div>
         <div className="Footer">
-        <Container className="social-media p-10">
-   <img width="5%" alt="facebook" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillFacebook}/>
-   <img width="5%" alt="instagram" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillInstagram}/>
-<img width="5%" alt="twitter" style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillTwitterSquare}/>
-<img width="5%" alt="youtube"style={{filter: "invert(100%) sepia(58%) saturate(2%) hue-rotate(273deg) brightness(113%) contrast(101%)"}} src={AiFillYoutube}/>
+        <Container className="social-media p-3">
+   <img className="icon socmed-icon m-r-10" width="50" height="50" alt="facebook"  src={Facebook}/>
+   <img className="icon socmed-icon m-r-10"   width="50" height="50" alt="instagram" src={Instagram}/>
+<img className="icon socmed-icon m-r-10" width="50" height="50 "alt="twitter"  src={Twitter}/>
+<img className="icon socmed-icon m-r-10" width="50" height="50" alt="youtube" src={Youtube}/>
   </Container>
           <p>Front End Developer Project - Group 2</p>
         </div>

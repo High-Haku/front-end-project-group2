@@ -1,0 +1,15 @@
+.navbar {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    align-content: space-between;
+}
+
+.nav-link{
+    font-size: 16px;
+}
+
+.Footer{
+    text-align: center;
+}
+

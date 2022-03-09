@@ -1,5 +1,5 @@
 export const ADD_ITEM = 'ADD_ITEM'
-export const DEL_ITEM = 'REM_ITEM' // DEL = DELETE
+export const DEL_ITEM = 'DEL_ITEM' // DEL = DELETE
 
 export const addCart = (product) => {
     return{

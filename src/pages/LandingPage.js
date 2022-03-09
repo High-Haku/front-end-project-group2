@@ -15,47 +15,22 @@ import { Container, Navbar, Nav, Row, Col, Button, CardGroup, Card, Form, } from
 function LandingPage(){
     return(
         <div className="LandingPage">
-           <div className="header">
-  <Navbar className="navbar" expand="md">
-    <Container>
-    <Navbar.Brand className="navbar navbar-brand"href="#home">
-      <img
-        src={CatLuvLogo}
-        width="200"
-        height="50"
-        className="d-inline-block align-top"
-        alt="CatLuv logo"
-      />
-    </Navbar.Brand>     
-    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-    <Navbar.Collapse className="navbar-collapse justify-content-end" id="basic-navbar-nav">
-    <Nav className="nav">
-      <Nav.Link className="nav-link" href="#pricing">Pricing</Nav.Link>
-      <Nav.Link className="nav-link" href="#courses">Courses</Nav.Link>
-      <Nav.Link className="nav-link" href="#service">Service</Nav.Link>
-      <Nav.Link className="nav-link" href="#company"><img alt="icon cart-icon m-r-10" width="25" height="25" src={Cart}/>Cart</Nav.Link>
-    </Nav>
-    </Navbar.Collapse>
-    </Container>
-  </Navbar>
-        </div>
         <div className="main-content">
             <Container>
       <Row>
     <Col className="text-cats" sm={6} responsive>
-        <h2>Find Your Cats Any Information Details.</h2>
-        <h3>Completely. Anything.</h3>
-        <Button className="btn btn-login"variant="primary" width="500" height="300">
+        <h2 responsive>Find Your Cats Any Information Details.</h2>
+        <h3 responsive>Completely. Anything.</h3>
+        <Button responsive className="btn btn-login"variant="primary" size="lg">
       Login Here
     </Button>{' '}
     </Col>
-    <Col className="image-lazy-cat" sm={6} responsive>
+    <Col className="image-lazy-cat p-r-10" sm={6}>
     <img 
         src={LazyCat}
-        width="650"
-        height="350"
-        className="lazy-cat d-inline-block align-top"
-        alt="LazyCat"
+        style={{width:"100%", maxHeight:"100vh"}}
+        className="lazy-cat ms-auto d-inline-block"
+        alt="LazyCat" responsive
       />
     </Col>
     </Row>
@@ -95,15 +70,6 @@ function LandingPage(){
   </Button>
             </Form>
           </Container>
-        </div>
-        <div className="Footer">
-        <Container className="social-media p-3">
-   <img className="icon socmed-icon m-r-10" width="30" height="30" alt="facebook"  src={Facebook}/>
-   <img className="icon socmed-icon m-r-10"   width="30" height="30" alt="instagram" src={Instagram}/>
-<img className="icon socmed-icon m-r-10" width="30" height="30 "alt="twitter"  src={Twitter}/>
-<img className="icon socmed-icon m-r-10" width="30" height="30" alt="youtube" src={Youtube}/>
-  </Container>
-          <p>Front End Developer Project - Group 2</p>
         </div>
         </div>
     )

@@ -1,4 +1,4 @@
-Navbar {
+.navbar {
     padding: 10px;
     background-color: white;
     display: flex;
@@ -12,3 +12,4 @@ Navbar {
 .Footer{
     text-align: center;
 }
+

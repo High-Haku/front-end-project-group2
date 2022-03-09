@@ -1,8 +1,6 @@
 .navbar {
     padding: 10px;
     background-color: white;
-    display: flex;
-    align-content: space-between;
 }
 
 .nav-link{

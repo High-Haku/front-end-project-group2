@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
+import { Button, Tooltip } from "antd";
 
 function SingleCat() {
   const [cat, setCat] = useState([]);
@@ -34,7 +35,7 @@ function SingleCat() {
                 width={400}
               />
             </Col>
-            <Col sm={4}>
+            <Col sm={5}>
               <h1 className="text-center">{cat.name}</h1>
               <br />
               <br />
@@ -62,19 +63,27 @@ function SingleCat() {
           </Row>
           <br />
           <Row className="justify-content-center text-center">
-            <Col sm={8}>
+            <Col sm={9}>
               <p>{cat.description}</p>
               <hr />
             </Col>
           </Row>
           <Row className="justify-content-center">
-            <Col sm={8}>
+            <Col sm={9}>
               <h5>Breed traits</h5>
             </Col>
           </Row>
           <Row className="justify-content-center">
-            <Col sm={4}>
-              <li>Affection Level: </li>
+            <Col className="col-lg-3 col-md-4 col-10">
+              <p>
+                <Tooltip title="Amount of warmth or friendliness displayed.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Affection Level :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.affection_level * 20}
@@ -82,7 +91,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Energy Level: </li>
+              <p>
+                <Tooltip title="Level of activity often exhibited.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Energy Level :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.energy_level * 20}
@@ -90,7 +107,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Shedding Level: </li>
+              <p>
+                <Tooltip title="Level and frequency of cat hair shedding.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Shedding Level :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.shedding_level * 20}
@@ -98,7 +123,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Child Friendly: </li>
+              <p>
+                <Tooltip title="Cats that tend to be more playful and easygoing around children and are more tolerant of children's behavior.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Child Friendly :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.child_friendly * 20}
@@ -106,7 +139,31 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Stranger Friendly:</li>
+              <p>
+                <Tooltip title="Tendency to enjoy or tolerate dogs.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Dog Friendly :
+              </p>
+              <ul>
+                <Rating
+                  ratingValue={cat.dog_friendly * 20}
+                  size={30}
+                  readonly
+                />
+              </ul>
+              <p>
+                <Tooltip title="Tendency to be welcoming to new people.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Stranger Friendly :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.stranger_friendly * 20}
@@ -114,7 +171,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Adaptability: </li>
+              <p>
+                <Tooltip title="How easily a cat deals with change.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Adaptability :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.adaptability * 20}
@@ -122,23 +187,41 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Experimental: </li>
-              <ul>
-                <Rating
-                  ratingValue={cat.experimental * 20}
-                  size={30}
-                  readonly
-                />
-              </ul>
-              <li>Grooming: </li>
+            </Col>
+            <Col className="col-lg-3 col-md-4 col-10">
+              <p>
+                <Tooltip title="Amount of bathing, brushing, even professional grooming needed.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Grooming :
+              </p>
               <ul>
                 <Rating ratingValue={cat.grooming * 20} size={30} readonly />
               </ul>
-              <li>Hairless: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Hairless :
+              </p>
               <ul>
                 <Rating ratingValue={cat.hairless * 20} size={30} readonly />
               </ul>
-              <li>Health Issues: </li>
+              <p>
+                <Tooltip title="Level of health issues a breed tends to have.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Health Issues :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.health_issues * 20}
@@ -146,7 +229,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Hypoallergenic: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Hypoallergenic :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.hypoallergenic * 20}
@@ -154,13 +245,27 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-            </Col>
-            <Col sm={4}>
-              <li>Indoor: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Indoor :
+              </p>
               <ul>
                 <Rating ratingValue={cat.indoor * 20} size={30} readonly />
               </ul>
-              <li>Intelligence: </li>
+              <p>
+                <Tooltip title="A cat's thinking and problem-solving ability (not trainability).">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Intelligence :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.intelligence * 20}
@@ -168,27 +273,77 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Lap: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Lap :
+              </p>
               <ul>
                 <Rating ratingValue={cat.lap * 20} size={30} readonly />
               </ul>
-              <li>Natural: </li>
+            </Col>
+            <Col className="col-lg-3 col-md-4 col-10">
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Natural :
+              </p>
               <ul>
                 <Rating ratingValue={cat.natural * 20} size={30} readonly />
               </ul>
-              <li>Rare: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Rare :
+              </p>
               <ul>
                 <Rating ratingValue={cat.rare * 20} size={30} readonly />
               </ul>
-              <li>Rex: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Rex :
+              </p>
               <ul>
                 <Rating ratingValue={cat.rex * 20} size={30} readonly />
               </ul>
-              <li>Short Legs: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Short Legs :
+              </p>
               <ul>
                 <Rating ratingValue={cat.short_legs * 20} size={30} readonly />
               </ul>
-              <li>Social Needs: </li>
+              <p>
+                <Tooltip title="Preferred amount of interaction with other pets and humans.">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Social Needs :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.social_needs * 20}
@@ -196,7 +351,15 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Surpressed Tail: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Suppressed Tail :
+              </p>
               <ul>
                 <Rating
                   ratingValue={cat.suppressed_tail * 20}
@@ -204,10 +367,18 @@ function SingleCat() {
                   readonly
                 />
               </ul>
-              <li>Vocalisation: </li>
+              <p>
+                <Tooltip title="">
+                  {" "}
+                  <Button type="primary" shape="circle" size="small">
+                    i
+                  </Button>
+                </Tooltip>{" "}
+                Vocalisation :
+              </p>
               <ul>
                 <Rating
-                  ratingValue={cat.energy_level * 20}
+                  ratingValue={cat.vocalisation * 20}
                   size={30}
                   readonly
                 />
@@ -215,7 +386,7 @@ function SingleCat() {
             </Col>
           </Row>
           <Row className="justify-content-center">
-            <Col sm={8}>
+            <Col sm={9}>
               <hr />
               <h5>Articles for {cat.name}: </h5>
               <ul>

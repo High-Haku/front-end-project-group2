@@ -29,7 +29,7 @@ const CatList = () => {
       <br />
       <input
         type="text"
-        placeholder="Search"
+        placeholder="Search by Name or Origin"
         onChange={(event) => setInputSearch(event.target.value)}
       />
       <br />

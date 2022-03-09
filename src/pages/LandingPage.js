@@ -2,6 +2,7 @@ import React from "react";
 import CatLuvLogo from '../img/CatLuvCom.png';
 import LazyCat from '../img/lazycat.png';
 import "./LandingPage.css";
+import Cart from '../img/cart.svg';
 import Facebook from "../img/facebook.svg";
 import Twitter from "../img/twitter.svg";
 import Instagram from "../img/instagram.svg";
@@ -15,7 +16,7 @@ function LandingPage(){
     return(
         <div className="LandingPage">
            <div className="header">
-  <Navbar className="navbar d-flex justify-content-between" expand="md">
+  <Navbar className="navbar" expand="md">
     <Navbar.Brand className="navbar navbar-brand"href="#home">
       <img
         src={CatLuvLogo}
@@ -31,7 +32,7 @@ function LandingPage(){
       <Nav.Link className="nav-link" href="#pricing">Pricing</Nav.Link>
       <Nav.Link className="nav-link" href="#courses">Courses</Nav.Link>
       <Nav.Link className="nav-link" href="#service">Service</Nav.Link>
-      <Nav.Link className="nav-link" href="#company">Company</Nav.Link>
+      <Nav.Link className="nav-link" href="#company"><img alt="icon cart-icon m-r-10" width="25" height="25" src={Cart}/>Cart</Nav.Link>
     </Nav>
     </Navbar.Collapse>
   </Navbar>
@@ -95,10 +96,10 @@ function LandingPage(){
         </div>
         <div className="Footer">
         <Container className="social-media p-3">
-   <img className="icon socmed-icon m-r-10" width="50" height="50" alt="facebook"  src={Facebook}/>
-   <img className="icon socmed-icon m-r-10"   width="50" height="50" alt="instagram" src={Instagram}/>
-<img className="icon socmed-icon m-r-10" width="50" height="50 "alt="twitter"  src={Twitter}/>
-<img className="icon socmed-icon m-r-10" width="50" height="50" alt="youtube" src={Youtube}/>
+   <img className="icon socmed-icon m-r-10" width="30" height="30" alt="facebook"  src={Facebook}/>
+   <img className="icon socmed-icon m-r-10"   width="30" height="30" alt="instagram" src={Instagram}/>
+<img className="icon socmed-icon m-r-10" width="30" height="30 "alt="twitter"  src={Twitter}/>
+<img className="icon socmed-icon m-r-10" width="30" height="30" alt="youtube" src={Youtube}/>
   </Container>
           <p>Front End Developer Project - Group 2</p>
         </div>

@@ -3,20 +3,21 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import Validation from "./validation";
 import { Link, useNavigate } from "react-router-dom";
 import login from "../img/login.svg";
+import { useContext } from "react";
+import { UserContext } from "../UserProvider";
 
 const Login = () => {
   const navigate = useNavigate();
+  const {setIsLogin} = useContext(UserContext)
 
   const [userLogin, setUserLogin] = useState({
     username: null,
     password: null,
   });
 
-  const [isLogin, setIsLogin] = useState(Boolean);
 
   const [errors, setErrors] = useState({});
 
-  localStorage.setItem("isLogin", false);
 
   const handleChange = (event) => {
     setUserLogin(() => ({
@@ -32,15 +33,16 @@ const Login = () => {
 
     setErrors(Validation(userLogin));
 
-    setIsLogin(localStorage.setItem("isLogin", true));
 
     if (
       userLogin.username === dataUser.username &&
       userLogin.password === dataUser.password 
     ) {
       navigate("/profile");
+      setIsLogin(true)
+      localStorage.setItem('isLogin',true)
     } else {
-      alert("Username atau Password salah");
+      alert("Wrong Username/Password");
     }
   };
 

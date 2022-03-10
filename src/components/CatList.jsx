@@ -22,14 +22,14 @@ const CatList = () => {
     navigate(`/cats/${cat.id}`);
   };
 
-  const styleText = cats.length === 0 ? { color: "black" } : { color: "white" }; //internal CSS
+  const styleText = cats.length === 0 ? { color: "white" } : { color: "black" }; //internal CSS
 
   return (
-    <div id="body" className="text-center justify-content-center">
+    <div className="text-center justify-content-center">
       <br />
       <input
         type="text"
-        placeholder="Search by Name or Origin"
+        placeholder="Search by Name / Origin"
         onChange={(event) => setInputSearch(event.target.value)}
       />
       <br />
@@ -37,7 +37,7 @@ const CatList = () => {
       <h1 style={styleText}>List of Breeds</h1>
       <br />
       <br />
-      <Container my={5}>
+      <Container my={5} className='p-2'>
         <Row gy={3}>
           {cats
             .filter((cat) => {
@@ -52,7 +52,7 @@ const CatList = () => {
             })
             .map((cat, index) => (
               <Col key={index} mt={2} lg={3} md={4} col={10} className="mt-5">
-                <Card>
+                <Card id='card-1' style={{borderColor:"#d8562e"}}>
                   <Card.Img
                     variant="top"
                     src={cat.image?.url}
@@ -60,9 +60,9 @@ const CatList = () => {
                     height={200}
                     width={150}
                   />
-                  <Card.Body>
+                  <Card.Body style={{backgroundColor:'#222', color:'white'}} >
                     <Card.Title>{cat.name}</Card.Title>
-                    <Card.Text>{cat.origin}</Card.Text>
+                    <Card.Text >{cat.origin}</Card.Text>
                     <Button
                       type="primary"
                       shape="circle"

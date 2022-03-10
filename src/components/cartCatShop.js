@@ -34,10 +34,10 @@ function CartCatShop() {
                                 {product.qty} x Rp {product.price} = Rp {product.total}
                             </p>
                             <button className="btn btn-outline-dark me-4" onClick={() => handleDel(product)}>
-                                <i className="fa fa-minus"></i>
+                                <i className="fa fa-minus"></i> -
                             </button>
                             <button className="btn btn-outline-dark me-4" onClick={() => handleAdd(product)}>
-                                <i className="fa fa-plus"></i>
+                                <i className="fa fa-plus"></i> +
                             </button>
                         </div>
                     </div>

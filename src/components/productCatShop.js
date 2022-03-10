@@ -4,14 +4,15 @@ import { Link, useParams } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { addCart } from '../Redux/Actions/cartProductAct';
-
+import RecommendationProduct from './recommendationProduct';
 
 function ProductCatShop() {
   const {id} = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
   const addProduct = (product) => {
       dispatch(addCart(product));
   }
@@ -30,16 +31,16 @@ function ProductCatShop() {
       return(
           <>
               <div className="col-md-6">
-                  <Skeleton height={400} />
+                  <Skeleton height={400} duration={2} />
               </div>
               <div className="col-md-6" style={{lineHeight:2}}>
-                  <Skeleton height={50} width={300} />
-                  <Skeleton height={75} />
-                  <Skeleton height={25} width={150} />
-                  <Skeleton height={50} />
-                  <Skeleton height={150} />
-                  <Skeleton height={50} width={100} inline={true} />
-                  <Skeleton height={50} width={100} style={{marginLeft:6}} />
+                  <Skeleton height={50} width={300} duration={2} />
+                  <Skeleton height={75} duration={2} />
+                  <Skeleton height={25} width={150} duration={2} />
+                  <Skeleton height={50} duration={2} />
+                  <Skeleton height={150} duration={2} />
+                  <Skeleton height={50} width={100} duration={2} inline={true} />
+                  <Skeleton height={50} width={100} duration={2} style={{marginLeft:6}} />
               </div>
           </>
       );
@@ -60,13 +61,13 @@ function ProductCatShop() {
                     {product.title}
                 </h1>
                 <p className="lead">
-                    Rating {product.rating && product.rating.rate}  <i className="fa fa-star"></i>
+                    Rating {product.rating}  <i className="fa fa-star"></i>
                 </p>
                 <h3 className="display-6 fw-bold my-4">
-                    $ {product.price}
+                    Rp {product.price}
                 </h3>
                 <p className="lead">
-                    {product.description}
+                    Description: {product.description}
                 </p>
                 <button className="btn btn-outline-dark px-3 py-2"
                  onClick={()=>addProduct(product)}>
@@ -85,6 +86,10 @@ function ProductCatShop() {
         <div className="container py-5">
             <div className="row py-4">
                 {loading ? <Loading /> : <ShowProduct/>}
+            </div>
+            <hr />
+            <div className="row">
+              <RecommendationProduct/>
             </div>
         </div>
     </div>

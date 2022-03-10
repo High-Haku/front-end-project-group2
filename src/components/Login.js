@@ -40,7 +40,7 @@ const Login = () => {
     ) {
       navigate("/profile");
     } else {
-      alert("Username atau Password salah");
+      alert("Wrong Username/Password");
     }
   };
 

@@ -5,6 +5,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { addCart } from '../Redux/Actions/cartProductAct';
 import RecommendationProduct from './recommendationProduct';
+import { Rating } from "react-simple-star-rating";
 
 function ProductCatShop() {
   const {id} = useParams();
@@ -60,9 +61,8 @@ function ProductCatShop() {
                 <h1 className="display-5">
                     {product.title}
                 </h1>
-                <p className="lead">
-                    Rating {product.rating}  <i className="fa fa-star"></i>
-                </p>
+                <Rating className="lead" ratingValue={product.rating *20} readonly/>
+                
                 <h3 className="display-6 fw-bold my-4">
                     Rp {product.price}
                 </h3>

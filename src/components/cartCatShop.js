@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import swal from '@sweetalert/with-react';
 import { addCart, delCart } from '../Redux/Actions/cartProductAct';
 
 function CartCatShop() {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // console.log(state);
 
@@ -57,7 +58,7 @@ function CartCatShop() {
           </div>,
           {buttons: "Go to Catshop"}
         ).then(() => {
-          window.location = "/catshop";
+          navigate("/catshop");
         })}
       </>
     )

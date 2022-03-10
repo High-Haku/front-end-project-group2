@@ -16,6 +16,7 @@ function ProductCatShop() {
   
   const addProduct = (product) => {
       dispatch(addCart(product));
+      window.scrollTo(0, 0)
   }
 
   useEffect(() => {

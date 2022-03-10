@@ -58,7 +58,8 @@ function CartCatShop() {
           </div>,
           {buttons: "Go to Catshop"}
         ).then(() => {
-          navigate("/catshop");
+          window.location.href = "/catshop";
+//           navigate("/catshop");
         })}
       </>
     )

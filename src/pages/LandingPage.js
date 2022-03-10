@@ -22,6 +22,8 @@ import {
   Form,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { UserContext } from "../UserProvider"; 
 
 // const isLogin = JSON.parse(localStorage.getItem("isLogin"));
 // const loginButton = document.querySelector("#loginButton");
@@ -32,7 +34,8 @@ import { Link } from "react-router-dom";
 //   };
 
 function LandingPage() {
-  
+  const { isLogin } = useContext(UserContext);
+
   return (
     <div className="LandingPage">
       <div className="main-content">
@@ -42,7 +45,7 @@ function LandingPage() {
               <h2 responsive>Find Your Cats Any Information Details.</h2>
               <h3 responsive>Completely. Anything.</h3>
               <Link to="/login">
-                <Button
+                {!isLogin && <Button
                   id="loginButton"
                   responsive
                   className="btn btn-login"
@@ -50,7 +53,8 @@ function LandingPage() {
                   size="lg"
                 >
                   Login Here
-                </Button>{" "}
+                </Button> }
+                
               </Link>
             </Col>
             <Col className="image-lazy-cat p-r-10" sm={6}>

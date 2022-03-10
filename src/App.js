@@ -36,9 +36,9 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={isLogin === true ? <ProfilePage /> : <Navigate to={"/login"} />} />
         <Route path="/cats" element={<CatList />} />
-        <Route path="/cats/:id" element={<SingleCat />} />
+        <Route path="/cats/:id" element={isLogin === true ? <SingleCat /> : <Navigate to={"/login"} />} />
         <Route path="/catshop" element={<CatShop />} />
-        <Route path="/catshop/:id" element={<ProductCatShop />} />
+        <Route path="/catshop/:id" element={isLogin === true ? <ProductCatShop /> : <Navigate to={"/login"} />} />
         <Route path="/cart" element={<CartCatShop />} />
         <Route path="/checkout" element={<CheckoutCatShop />} />
       </Route>

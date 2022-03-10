@@ -32,16 +32,16 @@ function NavbarPage() {
             id="basic-navbar-nav"
           >
             <Nav className="nav">
-              <Nav.Link className="nav-link" href="/cats">
+              <Link className="nav-link" to="/cats">
                 Cat List
-              </Nav.Link>
-              <Nav.Link className="nav-link" href="/profile">
+              </Link>
+              <Link className="nav-link" to="/profile">
                 Profile
-              </Nav.Link>
-              <Nav.Link className="nav-link" href="/catshop">
+              </Link>
+              <Link className="nav-link" to="/catshop">
                 Shop
-              </Nav.Link>
-              <Nav.Link className="nav-link" href="/cart">
+              </Link>
+              <Link className="nav-link" to="/cart">
                 <img
                   alt="icon cart-icon m-r-10"
                   width="25"
@@ -49,7 +49,7 @@ function NavbarPage() {
                   src={Cart}
                 />
                 Cart ({state.length})
-              </Nav.Link>
+              </Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

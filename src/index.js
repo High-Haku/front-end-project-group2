@@ -9,15 +9,16 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import rootReducers from "./Redux/Reducers/rootReducers";
 import thunk from "redux-thunk";
-import '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
+import "../node_modules/@fortawesome/fontawesome-svg-core/styles.css";
+import UserProvider from "./UserProvider";
 
-
-
-const store = createStore(rootReducers , applyMiddleware(thunk));
+const store = createStore(rootReducers, applyMiddleware(thunk));
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </Provider>
   </BrowserRouter>,
   document.getElementById("root")

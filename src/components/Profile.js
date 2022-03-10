@@ -1,15 +1,17 @@
 import React from "react";
 import profile from "../img/profile.svg";
 import { Col, Container, Row, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../UserProvider";
+
 
 function Profile() {
   const dataUser = JSON.parse(localStorage.getItem("user"));
   const dataTrans = JSON.parse(localStorage.getItem("transaction"));
   const isLogin = JSON.parse(localStorage.getItem("isLogin"))
   const navigate = useNavigate()
-  
+  const {setIsLogin} = useContext(UserContext)
   const username = dataUser.username;
   const email = dataUser.email;
   // const namaBarang = dataTrans.title;
@@ -19,7 +21,7 @@ function Profile() {
 
   const handleClick = () => {
     localStorage.setItem("isLogin",false);
-    localStorage.setItem("user","")
+    setIsLogin(false);
     navigate('/')
   }
 

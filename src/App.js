@@ -1,6 +1,6 @@
 import "antd/dist/antd.css";
 import "./App.css";
-import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, useNavigate } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import NotFound from "./pages/NotFound";
 import NavbarPage from "./components/navbar";
@@ -14,17 +14,27 @@ import CatShop from "./pages/CatShop";
 import ProductCatShop from "./components/productCatShop";
 import CartCatShop from "./components/cartCatShop";
 import CheckoutCatShop from "./components/checkoutCatShop";
+import { useContext, useEffect } from "react";
+import { UserContext } from "./UserProvider";
 
 // element={login === true ? <ProfilePage /> : <Navigate to={"/login"} />}
 function App() {
-  const login = JSON.parse(localStorage.getItem("isLogin"));
+  const navigate = useNavigate();
+  const { isLogin } = useContext(UserContext);
+  console.log(isLogin);
+  useEffect(() => {
+    if (!isLogin) {
+      navigate("/login");
+    }
+  }, [isLogin]);
+
   return (
     <Routes>
       <Route path="/" element={<Template />}>
         <Route index element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={isLogin ? <Navigate to={'/profile'} /> : <LoginPage/>} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/profile" element={<ProfilePage/>} />
+        <Route path="/profile" element={isLogin === true ? <ProfilePage /> : <Navigate to={"/login"} />} />
         <Route path="/cats" element={<CatList />} />
         <Route path="/cats/:id" element={<SingleCat />} />
         <Route path="/catshop" element={<CatShop />} />

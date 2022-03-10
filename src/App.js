@@ -22,11 +22,11 @@ function App() {
   const navigate = useNavigate();
   const { isLogin } = useContext(UserContext);
   console.log(isLogin);
-  useEffect(() => {
-    if (!isLogin) {
-      navigate("/login");
-    }
-  }, [isLogin]);
+//   useEffect(() => {
+//     if (!isLogin) {
+//       navigate("/login");
+//     }
+//   }, [isLogin]);
 
   return (
     <Routes>

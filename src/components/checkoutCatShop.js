@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useSelector } from 'react-redux'
 import swal from '@sweetalert/with-react';
+import { useNavigate } from 'react-router-dom';
 
 function CheckoutCatShop() {
   const state = useSelector((state) => state.handleCart);
   console.log(state);
-
+  const navigate = useNavigate();
+  
   const [totalPrice, setTotalPrice] = useState(0);
   const [isCheck, setIsCheck] = useState(false);
 
@@ -72,7 +74,7 @@ function CheckoutCatShop() {
           </div>,
           { buttons: "Belanja lagi yuk!" }
         ).then(() => {
-          window.location = "/catshop";
+          navigate("/catshop");
         })}
       </>
     )

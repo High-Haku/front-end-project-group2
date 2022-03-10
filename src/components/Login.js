@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import login from "../img/login.svg";
 import { useContext } from "react";
 import { UserContext } from "../UserProvider";
+import swal from '@sweetalert/with-react';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,7 +43,17 @@ const Login = () => {
       setIsLogin(true)
       localStorage.setItem('isLogin',true)
     } else {
-      alert("Wrong Username/Password");
+      <>
+        {swal(
+          <div>
+            <img src="/images/purr-shopping.png"  height="250px" alt="" srcset="" />
+            <h3 className="text-warning">Wrong Password Or Username</h3>
+          </div>,
+          {buttons: "Close"}
+        ).then(() => {
+          navigate("/login");
+        })}
+      </>
     }
   };
 

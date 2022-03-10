@@ -74,7 +74,8 @@ function CheckoutCatShop() {
           </div>,
           { buttons: "Belanja lagi yuk!" }
         ).then(() => {
-          navigate("/catshop");
+          window.location.href = "/catshop";
+//           navigate("/catshop");
         })}
       </>
     )

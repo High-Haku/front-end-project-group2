@@ -20,6 +20,7 @@ const CatList = () => {
 
   const handleClick = (cat) => {
     navigate(`/cats/${cat.id}`);
+    window.scrollTo(0, 0);
   };
 
   const styleText = cats.length === 0 ? { color: "white" } : { color: "black" }; //internal CSS

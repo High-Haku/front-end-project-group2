@@ -4,6 +4,7 @@ import axios from "axios";
 import { Col, Container, Row } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
 import { Button, Tooltip } from "antd";
+import RecommendationProduct from "./recommendationProduct";
 
 function SingleCat() {
   const [cat, setCat] = useState([]);
@@ -411,6 +412,7 @@ function SingleCat() {
               </ul>
             </Col>
           </Row>
+          <RecommendationProduct/>
         </Container>
       </section>
     </>

@@ -46,7 +46,7 @@ const Login = () => {
       <>
         {swal(
           <div>
-            <img src="/images/purr-shopping.png"  height="250px" alt="" srcset="" />
+            <img src="/images/cat-animal.png"  height="250px" alt="" srcset="" />
             <h3 className="text-warning">Wrong Password Or Username</h3>
           </div>,
           {buttons: "Close"}
